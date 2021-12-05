@@ -1,4 +1,4 @@
-# react-context-menu
+# react-contextmenu-anywhere
 
 ## Installation
 
