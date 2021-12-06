@@ -1,9 +1,14 @@
 {
   "name": "react-contextmenu-anywhere",
   "version": "0.0.1",
-  "private": true,
-  "module": "dist/Test.js",
-  "main": "dist/Test.js",
+  "private": false,
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "author": {
+    "name": "yunu7067",
+    "email": "yunu7067@gmail.com"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,6 +57,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/react-contextmenu-anywhere.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yunu7067/react-contextmenu-anywhere/issues"
   }
 }

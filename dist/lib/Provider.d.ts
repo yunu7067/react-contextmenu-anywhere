@@ -1,6 +1,11 @@
 import React from "react";
-declare type GreetingsProps = {
+import { ContextMenuState, ContextMenuDispatch } from "./store/ContextMenuContext";
+declare type ContextMenuProviderProps = {
     children: React.ReactNode;
 };
-declare const Provider: React.FC<GreetingsProps>;
-export { Provider };
+declare function ContextMenuProvider({ children }: ContextMenuProviderProps): JSX.Element;
+declare function useContextMenuState(): ContextMenuState;
+declare function useContextMenuDispatch(): ContextMenuDispatch;
+declare function useContextMenu(): [ContextMenuState, ContextMenuDispatch];
+export default ContextMenuProvider;
+export { useContextMenu, useContextMenuState, useContextMenuDispatch };
