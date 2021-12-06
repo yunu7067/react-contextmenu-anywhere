@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MenuGroup from "./component/MenuGroup";
-import "./ContextMenu.css";
+import "./dist/lib/style/ContextMenu.css";
 import { useContextMenu } from "./Provider";
 import type { MenuContainerType } from "./Types";
 

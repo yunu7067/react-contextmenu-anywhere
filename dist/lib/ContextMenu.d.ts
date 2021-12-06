@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContextMenu.css";
+import "./dist/lib/style/ContextMenu.css";
 import type { MenuContainerType } from "./Types";
 declare type ContextMenuProps = {
     children?: React.ReactNode;
