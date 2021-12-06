@@ -5,9 +5,9 @@
 You can install this module with npm or yarn.
 
 ```
-npm i react-context-menu
+npm i react-contextmenu-anywhere
 # or
-yarn add react-context-menu
+yarn add react-contextmenu-anywhere
 ```
 
 ## Quick start
