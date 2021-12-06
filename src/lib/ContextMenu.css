@@ -16,6 +16,8 @@ div.context-menu {
   box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
   visibility: collapse;
   color: var(--color-text);
+  font-size: 16px;
+  text-align: start;
   z-index: 100;
 }
 div.context-menu[data-visibility="true"] {
@@ -60,6 +62,7 @@ ul.context-menu-group > li > * {
   padding: 8px;
   background: transparent;
   border: none;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -74,10 +77,14 @@ ul.context-menu-group > li > * {
   background-color: var(--color-bg-disabled);
   cursor: default;
 }
-.context-menu-item-button > .context-menu-item-icon {
+.context-menu-item-button > .context-menu-item-name {
+  flex: auto;
+  margin: 0 8px;
+}
+.context-menu-item-button > .context-menu-item-icon,
+.context-menu-item-button > .context-menu-item-info {
   width: 20px;
   height: 20px;
-  margin-right: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,13 +93,13 @@ ul.context-menu-group > li > * {
 /* 서브메뉴 스타일 */
 div.context-menu-item-button > .context-menu,
 div.context-menu-item-button > .context-menu[data-direction="right"] {
-  left: 90%;
+  left: calc(100% - 8px);
   right: auto;
   top: 0;
 }
 div.context-menu-item-button > .context-menu[data-direction="left"] {
   left: auto;
-  right: 90%;
+  right: calc(100% - 8px);
   top: 0;
 }
 

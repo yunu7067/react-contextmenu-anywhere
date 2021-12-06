@@ -7,18 +7,24 @@ function App() {
   const menus: MenuContainerType = [
     [
       {
-        icon: "🥩",
+        icon: <img src="/airplane.svg" alt="airplane" width="20" height="20" />,
         name: "menu1",
         key: "M",
         handleClick: () => console.log("menu1 selected"),
       },
       {
+        icon: "🥩",
         name: "menu2",
+        key: "M",
+        handleClick: () => console.log("menu1 selected"),
+      },
+      {
+        name: "menu3",
         key: "E",
         handleClick: () => console.log("menu2 selected"),
       },
       {
-        name: "menu3(disabled)",
+        name: "menu4(disabled)",
         key: "P",
         disabled: true,
         submenu: [
@@ -97,7 +103,7 @@ function App() {
   const menus2: MenuContainerType = [
     [
       {
-        icon: "😂",
+        icon: <img src="/airplane.svg" alt="airplane" width="20" height="@0" />,
         name: "메뉴 테스트2",
         key: "M",
         handleClick: () => console.log("menu1 selected"),
