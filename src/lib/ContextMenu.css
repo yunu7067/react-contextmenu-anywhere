@@ -92,15 +92,22 @@ ul.context-menu-group > li > * {
 
 /* 서브메뉴 스타일 */
 div.context-menu-item-button > .context-menu,
-div.context-menu-item-button > .context-menu[data-direction="right"] {
+div.context-menu-item-button > .context-menu[data-h-direction="right"] {
   left: calc(100% - 8px);
   right: auto;
-  top: 0;
 }
-div.context-menu-item-button > .context-menu[data-direction="left"] {
+div.context-menu-item-button > .context-menu[data-h-direction="left"] {
   left: auto;
   right: calc(100% - 8px);
+}
+div.context-menu-item-button > .context-menu[data-v-direction="top"] {
+  top: auto;
+  bottom: 0;
+}
+div.context-menu-item-button > .context-menu,
+div.context-menu-item-button > .context-menu[data-v-direction="bottom"] {
   top: 0;
+  bottom: auto;
 }
 
 .context-menu[data-visibility="true"]

@@ -40,7 +40,6 @@ function ContextMenu(_a) {
     };
     var disableThisCM = function () { return setVisible(false); };
     var hideContextMenu = function () {
-        console.log("hideContextMenu");
         contextMenu.removeCurrentContextMenu();
         dispatchContextMenu({ type: "SET_VISIBILITY", isVisible: false });
         setVisible(false);

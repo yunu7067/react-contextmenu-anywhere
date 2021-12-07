@@ -1,19 +1,60 @@
-import React from "react";
-import { drawContextMenu } from "../ContextMenu";
+import React, { useEffect, useRef, useState } from "react";
 import { MenuItemType } from "../Types";
+import useWindowDimensions from "../util/useWindowDimensions";
+import MenuContainer from "./MenuContainer";
 
 type MenuItemProps = {
   item: MenuItemType;
 };
 
 export default function MenuItem(props: MenuItemProps) {
+  const [submenuVisibility, setSubmenuVisibility] = useState<boolean>(false);
+  const [submenuDirection, setSubMenuDirection] = useState({
+    h: "right",
+    v: "bottom",
+  });
+  const submenuRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLLIElement>(null);
+  const viewport = useWindowDimensions();
+
+  useEffect(() => {
+    if (submenuRef.current !== undefined && itemRef.current !== undefined) {
+      const mcRight = itemRef.current?.getBoundingClientRect().right || 0;
+      const mcTop = itemRef.current?.getBoundingClientRect().top || 0;
+      const submenuWidht =
+        submenuRef.current?.getBoundingClientRect().width || 0;
+      const submenuHeight =
+        submenuRef.current?.getBoundingClientRect().height || 0;
+
+      const calcSubmenuHDirection =
+        viewport.width - mcRight - submenuWidht < 8 ? "left" : "right";
+
+      const calcSubmenuVDirection =
+        viewport.height - mcTop - submenuHeight < 0 ? "top" : "bottom";
+
+      // console.debug(viewport);
+      // console.debug({ mcRight, submenuWidht });
+      // console.debug({ mcTop, submenuHeight });
+      setSubMenuDirection({
+        h: calcSubmenuHDirection,
+        v: calcSubmenuVDirection,
+      });
+    }
+  }, [submenuVisibility]);
+
   return (
-    <li className="context-menu-item" role="none">
+    <li className="context-menu-item" role="none" ref={itemRef}>
       <div
         className="context-menu-item-button"
         role="menuitem"
         aria-disabled={props.item.disabled}
         onClick={props.item.handleClick}
+        onMouseEnter={() =>
+          setSubmenuVisibility(
+            Array.isArray(props.item.submenu) && props.item.disabled !== true
+          )
+        }
+        onMouseLeave={() => setSubmenuVisibility(false)}
       >
         <span className="context-menu-item-icon">{props.item.icon}</span>
         <span className="context-menu-item-name">{props.item.name}</span>
@@ -35,9 +76,12 @@ export default function MenuItem(props: MenuItemProps) {
         </span>
 
         {props.item.submenu && (
-          <div className="context-menu" data-direction={"right"}>
-            {drawContextMenu(props.item.submenu)}
-          </div>
+          <MenuContainer
+            mRef={submenuRef}
+            item={props.item.submenu}
+            visibility={submenuVisibility}
+            direction={submenuDirection}
+          />
         )}
       </div>
     </li>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MenuGroup from "./component/MenuGroup";
-import "./dist/lib/style/ContextMenu.css";
+import "./ContextMenu.css";
 import { useContextMenu } from "./Provider";
 import type { MenuContainerType } from "./Types";
 
@@ -43,7 +43,7 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
   const disableThisCM = () => setVisible(false);
 
   const hideContextMenu = () => {
-    console.log("hideContextMenu");
+    // console.debug("hideContextMenu");
     contextMenu.removeCurrentContextMenu();
     dispatchContextMenu({ type: "SET_VISIBILITY", isVisible: false });
     setVisible(false);
