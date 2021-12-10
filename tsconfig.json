@@ -30,6 +30,7 @@
       "index.d.ts",
       "node_modules/@types"
     ],
+    "noEmit": true
   },
   "include": [
     "./src/**/*.tsx",
