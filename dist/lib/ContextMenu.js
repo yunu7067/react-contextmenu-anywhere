@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from "react";
 import MenuGroup from "./component/MenuGroup";
-import "./style/ContextMenu.css";
+import "./ContextMenu.css";
 import { useContextMenu } from "./Provider";
 function drawContextMenu(menu) {
     return menu.map(function (menuGroup, index) { return (_jsx(MenuGroup, { item: menuGroup }, "MenuGroup-".concat(index))); });

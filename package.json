@@ -11,10 +11,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "pub": "tsc"
+    "build": "yarn build:clean && yarn build:all",
+    "build:clean": "rimraf dist/",
+    "build:all": "yarn build:esm && yarn build:cjs && yarn build:umd",
+    "build:esm": "tsc",
+    "build:cjs": "echo \"commonjs module build is not yet supported.\"",
+    "build:umd": "echo \"umd module build is not yet supported.\"",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -23,6 +26,7 @@
     ]
   },
   "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
@@ -39,6 +43,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "rimraf": "^3.0.2",
     "typescript": "^4.5.3"
   },
   "browserslist": {
@@ -59,5 +64,10 @@
   },
   "bugs": {
     "url": "https://github.com/yunu7067/react-contextmenu-anywhere/issues"
-  }
+  },
+  "keywords": [
+    "react",
+    "component",
+    "contextmenu"
+  ]
 }
