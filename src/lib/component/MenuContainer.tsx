@@ -1,6 +1,6 @@
-import React from "react";
-import { MenuContainerType } from "../Types";
-import { drawContextMenu } from "../ContextMenu";
+import React from 'react';
+import { MenuContainerType } from '../Types';
+import { drawContextMenu } from '../ContextMenu';
 
 type MenuContainerProps = {
   item: MenuContainerType;

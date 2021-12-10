@@ -1,44 +1,44 @@
-import React from "react";
-import "./App.css";
-import { ContextMenu } from "./lib/ContextMenu";
-import { MenuContainerType } from "./lib/Types";
+import React from 'react';
+import './App.css';
+import { ContextMenu } from './lib/ContextMenu';
+import { MenuContainerType } from './lib/Types';
 
 function App() {
   const menus: MenuContainerType = [
     [
       {
         icon: <img src="/airplane.svg" alt="airplane" width="20" height="20" />,
-        name: "menu1",
-        key: "M",
-        handleClick: () => console.log("menu1 selected"),
+        name: 'menu1',
+        key: 'M',
+        handleClick: () => console.log('menu1 selected'),
       },
       {
-        icon: "🥩",
-        name: "menu2",
-        key: "M",
-        handleClick: () => console.log("menu1 selected"),
+        icon: '🥩',
+        name: 'menu2',
+        key: 'M',
+        handleClick: () => console.log('menu1 selected'),
       },
       {
-        name: "menu3",
-        key: "E",
-        handleClick: () => console.log("menu2 selected"),
+        name: 'menu3',
+        key: 'E',
+        handleClick: () => console.log('menu2 selected'),
       },
       {
-        name: "menu4(disabled)",
-        key: "P",
+        name: 'menu4(disabled)',
+        key: 'P',
         disabled: true,
         submenu: [
           [
             {
-              icon: "🥂",
-              name: "submenu1",
-              key: "Q",
-              handleClick: () => console.log("submenu1 selected"),
+              icon: '🥂',
+              name: 'submenu1',
+              key: 'Q',
+              handleClick: () => console.log('submenu1 selected'),
             },
             {
-              name: "submenu2",
-              key: "T",
-              handleClick: () => console.log("submenu2 selected"),
+              name: 'submenu2',
+              key: 'T',
+              handleClick: () => console.log('submenu2 selected'),
             },
           ],
         ],
@@ -46,42 +46,42 @@ function App() {
     ],
     [
       {
-        icon: "🍱",
-        name: "menu3",
-        key: "S",
+        icon: '🍱',
+        name: 'menu3',
+        key: 'S',
         submenu: [
           [
             {
-              icon: "😂",
-              name: "submenu1",
-              key: "Q",
-              handleClick: () => console.log("submenu1 selected"),
+              icon: '😂',
+              name: 'submenu1',
+              key: 'Q',
+              handleClick: () => console.log('submenu1 selected'),
               submenu: [
                 [
                   {
-                    icon: "😂",
-                    name: "submenu1",
-                    key: "Q",
-                    handleClick: () => console.log("submenu1 selected"),
+                    icon: '😂',
+                    name: 'submenu1',
+                    key: 'Q',
+                    handleClick: () => console.log('submenu1 selected'),
                   },
                   {
-                    icon: "",
-                    name: "submenu2",
-                    key: "T",
-                    handleClick: () => console.log("submenu2 selected"),
+                    icon: '',
+                    name: 'submenu2',
+                    key: 'T',
+                    handleClick: () => console.log('submenu2 selected'),
                     submenu: [
                       [
                         {
-                          icon: "😂",
-                          name: "submenu1",
-                          key: "Q",
-                          handleClick: () => console.log("submenu1 selected"),
+                          icon: '😂',
+                          name: 'submenu1',
+                          key: 'Q',
+                          handleClick: () => console.log('submenu1 selected'),
                         },
                         {
-                          icon: "",
-                          name: "submenu2",
-                          key: "T",
-                          handleClick: () => console.log("submenu2 selected"),
+                          icon: '',
+                          name: 'submenu2',
+                          key: 'T',
+                          handleClick: () => console.log('submenu2 selected'),
                         },
                       ],
                     ],
@@ -90,10 +90,10 @@ function App() {
               ],
             },
             {
-              icon: "",
-              name: "submenu2",
-              key: "T",
-              handleClick: () => console.log("submenu2 selected"),
+              icon: '',
+              name: 'submenu2',
+              key: 'T',
+              handleClick: () => console.log('submenu2 selected'),
             },
           ],
         ],
@@ -104,9 +104,9 @@ function App() {
     [
       {
         icon: <img src="/airplane.svg" alt="airplane" width="20" height="@0" />,
-        name: "메뉴 테스트2",
-        key: "M",
-        handleClick: () => console.log("menu1 selected"),
+        name: '메뉴 테스트2',
+        key: 'M',
+        handleClick: () => console.log('menu1 selected'),
       },
     ],
   ];

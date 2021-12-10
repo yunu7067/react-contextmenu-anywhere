@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { MenuItemType } from "../Types";
-import useWindowDimensions from "../util/useWindowDimensions";
-import MenuContainer from "./MenuContainer";
+import React, { useEffect, useRef, useState } from 'react';
+import { MenuItemType } from '../Types';
+import useWindowDimensions from '../util/useWindowDimensions';
+import MenuContainer from './MenuContainer';
 
 type MenuItemProps = {
   item: MenuItemType;
@@ -10,8 +10,8 @@ type MenuItemProps = {
 export default function MenuItem(props: MenuItemProps) {
   const [submenuVisibility, setSubmenuVisibility] = useState<boolean>(false);
   const [submenuDirection, setSubMenuDirection] = useState({
-    h: "right",
-    v: "bottom",
+    h: 'right',
+    v: 'bottom',
   });
   const submenuRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLLIElement>(null);
@@ -27,10 +27,10 @@ export default function MenuItem(props: MenuItemProps) {
         submenuRef.current?.getBoundingClientRect().height || 0;
 
       const calcSubmenuHDirection =
-        viewport.width - mcRight - submenuWidht < 8 ? "left" : "right";
+        viewport.width - mcRight - submenuWidht < 8 ? 'left' : 'right';
 
       const calcSubmenuVDirection =
-        viewport.height - mcTop - submenuHeight < 0 ? "top" : "bottom";
+        viewport.height - mcTop - submenuHeight < 0 ? 'top' : 'bottom';
 
       // console.debug(viewport);
       // console.debug({ mcRight, submenuWidht });

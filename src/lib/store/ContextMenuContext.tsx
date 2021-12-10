@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import { Dispatch } from 'react';
 
 type ContextMenuState = {
   isVisible: boolean;
@@ -6,9 +6,9 @@ type ContextMenuState = {
 };
 
 type ContextMenuAction =
-  | { type: "SET_VISIBILITY"; isVisible: boolean }
-  | { type: "SET_REMOVE_CALLBACK"; removeCurrentContextMenu: () => void }
-  | { type: "TOGGLE_VISIBILITY" };
+  | { type: 'SET_VISIBILITY'; isVisible: boolean }
+  | { type: 'SET_REMOVE_CALLBACK'; removeCurrentContextMenu: () => void }
+  | { type: 'TOGGLE_VISIBILITY' };
 
 type ContextMenuDispatch = Dispatch<ContextMenuAction>;
 
@@ -17,23 +17,23 @@ function contextMenuReducer(
   action: ContextMenuAction
 ): ContextMenuState {
   switch (action.type) {
-    case "SET_VISIBILITY":
+    case 'SET_VISIBILITY':
       return {
         ...state,
         isVisible: action.isVisible,
       };
-    case "TOGGLE_VISIBILITY":
+    case 'TOGGLE_VISIBILITY':
       return {
         ...state,
         isVisible: !state.isVisible,
       };
-    case "SET_REMOVE_CALLBACK":
+    case 'SET_REMOVE_CALLBACK':
       return {
         ...state,
         removeCurrentContextMenu: action.removeCurrentContextMenu,
       };
     default:
-      throw new Error("Unhandled action");
+      throw new Error('Unhandled action');
   }
 }
 

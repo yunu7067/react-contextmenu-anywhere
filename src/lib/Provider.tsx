@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from 'react';
 import {
   ContextMenuState,
   ContextMenuDispatch,
   contextMenuReducer,
-} from "./store/ContextMenuContext";
+} from './store/ContextMenuContext';
 
 /* 컨텍스트 생성 */
 const ContextMenuStateContext = createContext<ContextMenuState>({
@@ -35,13 +35,13 @@ function ContextMenuProvider({ children }: ContextMenuProviderProps) {
 
 function useContextMenuState(): ContextMenuState {
   const state = useContext(ContextMenuStateContext);
-  if (!state) throw new Error("Cannot find SampleProvider");
+  if (!state) throw new Error('Cannot find SampleProvider');
   return state;
 }
 
 function useContextMenuDispatch(): ContextMenuDispatch {
   const dispatch = useContext(ContextMenuDispatchContext);
-  if (!dispatch) throw new Error("Cannot find SampleProvider");
+  if (!dispatch) throw new Error('Cannot find SampleProvider');
   return dispatch;
 }
 

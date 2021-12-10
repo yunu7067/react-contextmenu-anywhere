@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import MenuGroup from "./component/MenuGroup";
-import "./ContextMenu.css";
-import { useContextMenu } from "./Provider";
-import type { MenuContainerType } from "./Types";
+import React, { useEffect, useState } from 'react';
+import MenuGroup from './component/MenuGroup';
+import './ContextMenu.css';
+import { useContextMenu } from './Provider';
+import type { MenuContainerType } from './Types';
 
 type ContextMenuProps = {
+  tes?: boolean;
   children?: React.ReactNode;
   menu: MenuContainerType;
 };
@@ -32,9 +33,9 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
   }
 
   const showContextMenu = () => {
-    dispatchContextMenu({ type: "SET_VISIBILITY", isVisible: true });
+    dispatchContextMenu({ type: 'SET_VISIBILITY', isVisible: true });
     dispatchContextMenu({
-      type: "SET_REMOVE_CALLBACK",
+      type: 'SET_REMOVE_CALLBACK',
       removeCurrentContextMenu: disableThisCM,
     });
     setVisible(true);
@@ -45,7 +46,7 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
   const hideContextMenu = () => {
     // console.debug("hideContextMenu");
     contextMenu.removeCurrentContextMenu();
-    dispatchContextMenu({ type: "SET_VISIBILITY", isVisible: false });
+    dispatchContextMenu({ type: 'SET_VISIBILITY', isVisible: false });
     setVisible(false);
   };
 

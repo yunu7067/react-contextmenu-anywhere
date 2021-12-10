@@ -1,6 +1,6 @@
-import React from "react";
-import { MenuGroupType } from "../Types";
-import MenuItem from "./MenuItem";
+import React from 'react';
+import { MenuGroupType } from '../Types';
+import MenuItem from './MenuItem';
 
 type MenuGroupProps = {
   item: MenuGroupType;

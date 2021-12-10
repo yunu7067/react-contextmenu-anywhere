@@ -4,6 +4,7 @@
   "private": false,
   "license": "MIT",
   "main": "dist/lib/index.js",
+  "module": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "author": {
     "name": "yunu7067",
@@ -17,6 +18,7 @@
     "build:esm": "tsc",
     "build:cjs": "echo \"commonjs module build is not yet supported.\"",
     "build:umd": "echo \"umd module build is not yet supported.\"",
+    "lint": "yarn run eslint src --ext .js,.jsx,.ts,.tsx",
     "test": "react-scripts test"
   },
   "eslintConfig": {
@@ -40,6 +42,12 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
