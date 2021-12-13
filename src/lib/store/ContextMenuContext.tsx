@@ -7,15 +7,12 @@ type ContextMenuState = {
 
 type ContextMenuAction =
   | { type: 'SET_VISIBILITY'; isVisible: boolean }
-  | { type: 'SET_REMOVE_CALLBACK'; removeCurrentContextMenu: () => void }
+  | { type: 'SET_CLOSE_CALLBACK'; removeCurrentContextMenu: () => void }
   | { type: 'TOGGLE_VISIBILITY' };
 
 type ContextMenuDispatch = Dispatch<ContextMenuAction>;
 
-function contextMenuReducer(
-  state: ContextMenuState,
-  action: ContextMenuAction
-): ContextMenuState {
+function contextMenuReducer(state: ContextMenuState, action: ContextMenuAction): ContextMenuState {
   switch (action.type) {
     case 'SET_VISIBILITY':
       return {
@@ -27,7 +24,7 @@ function contextMenuReducer(
         ...state,
         isVisible: !state.isVisible,
       };
-    case 'SET_REMOVE_CALLBACK':
+    case 'SET_CLOSE_CALLBACK':
       return {
         ...state,
         removeCurrentContextMenu: action.removeCurrentContextMenu,

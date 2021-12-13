@@ -11,9 +11,7 @@ type ContextMenuProps = {
 };
 
 function drawContextMenu(menu: MenuContainerType): React.ReactNode {
-  return menu.map((menuGroup, index) => (
-    <MenuGroup key={`MenuGroup-${index}`} item={menuGroup} />
-  ));
+  return menu.map((menuGroup, index) => <MenuGroup key={`MenuGroup-${index}`} item={menuGroup} />);
 }
 
 function ContextMenu({ children, menu }: ContextMenuProps) {
@@ -35,7 +33,7 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
   const showContextMenu = () => {
     dispatchContextMenu({ type: 'SET_VISIBILITY', isVisible: true });
     dispatchContextMenu({
-      type: 'SET_REMOVE_CALLBACK',
+      type: 'SET_CLOSE_CALLBACK',
       removeCurrentContextMenu: disableThisCM,
     });
     setVisible(true);
@@ -51,12 +49,11 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
   };
 
   return (
-    <div onContextMenu={contextMenuHandler}>
+    <div onContextMenu={contextMenuHandler} onClick={hideContextMenu}>
       {children}
       <div
         className="context-menu"
         data-visibility={contextMenu.isVisible && visible}
-        onClick={hideContextMenu}
         style={{
           left: position.x,
           top: position.y,

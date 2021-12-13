@@ -1,18 +1,12 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import {
-  ContextMenuState,
-  ContextMenuDispatch,
-  contextMenuReducer,
-} from './store/ContextMenuContext';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import { ContextMenuState, ContextMenuDispatch, contextMenuReducer } from './store/ContextMenuContext';
 
 /* 컨텍스트 생성 */
 const ContextMenuStateContext = createContext<ContextMenuState>({
   isVisible: false,
   removeCurrentContextMenu: () => {},
 });
-const ContextMenuDispatchContext = createContext<ContextMenuDispatch>(
-  () => null
-);
+const ContextMenuDispatchContext = createContext<ContextMenuDispatch>(() => null);
 
 type ContextMenuProviderProps = {
   children: React.ReactNode;
@@ -26,9 +20,7 @@ function ContextMenuProvider({ children }: ContextMenuProviderProps) {
 
   return (
     <ContextMenuStateContext.Provider value={state}>
-      <ContextMenuDispatchContext.Provider value={dispatch}>
-        {children}
-      </ContextMenuDispatchContext.Provider>
+      <ContextMenuDispatchContext.Provider value={dispatch}>{children}</ContextMenuDispatchContext.Provider>
     </ContextMenuStateContext.Provider>
   );
 }

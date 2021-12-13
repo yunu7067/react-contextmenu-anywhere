@@ -20,7 +20,7 @@ div.context-menu {
   text-align: start;
   z-index: 100;
 }
-div.context-menu[data-visibility="true"] {
+div.context-menu[data-visibility='true'] {
   visibility: visible;
 }
 div.context-menu * {
@@ -92,26 +92,24 @@ ul.context-menu-group > li > * {
 
 /* 서브메뉴 스타일 */
 div.context-menu-item-button > .context-menu,
-div.context-menu-item-button > .context-menu[data-h-direction="right"] {
+div.context-menu-item-button > .context-menu[data-h-direction='right'] {
   left: calc(100% - 8px);
   right: auto;
 }
-div.context-menu-item-button > .context-menu[data-h-direction="left"] {
+div.context-menu-item-button > .context-menu[data-h-direction='left'] {
   left: auto;
   right: calc(100% - 8px);
 }
-div.context-menu-item-button > .context-menu[data-v-direction="top"] {
+div.context-menu-item-button > .context-menu[data-v-direction='top'] {
   top: auto;
   bottom: 0;
 }
 div.context-menu-item-button > .context-menu,
-div.context-menu-item-button > .context-menu[data-v-direction="bottom"] {
+div.context-menu-item-button > .context-menu[data-v-direction='bottom'] {
   top: 0;
   bottom: auto;
 }
 
-.context-menu[data-visibility="true"]
-  .context-menu-item-button:not([aria-disabled]):hover
-  > .context-menu {
+.context-menu[data-visibility='true'] .context-menu-item-button:not([aria-disabled]):hover > .context-menu {
   visibility: visible;
 }
