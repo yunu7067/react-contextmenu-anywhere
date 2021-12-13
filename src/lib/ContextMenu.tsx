@@ -54,6 +54,7 @@ function ContextMenu({ children, menu }: ContextMenuProps) {
       <div
         className="context-menu"
         data-visibility={contextMenu.isVisible && visible}
+        data-darkmode={contextMenu.isDarkmode}
         style={{
           left: position.x,
           top: position.y,

@@ -2,13 +2,14 @@ import { Dispatch } from 'react';
 
 type ContextMenuState = {
   isVisible: boolean;
+  isDarkmode: boolean;
   removeCurrentContextMenu: () => void;
 };
 
 type ContextMenuAction =
   | { type: 'SET_VISIBILITY'; isVisible: boolean }
   | { type: 'SET_CLOSE_CALLBACK'; removeCurrentContextMenu: () => void }
-  | { type: 'TOGGLE_VISIBILITY' };
+  | { type: 'TOGGLE_DARKMODE' };
 
 type ContextMenuDispatch = Dispatch<ContextMenuAction>;
 
@@ -19,10 +20,10 @@ function contextMenuReducer(state: ContextMenuState, action: ContextMenuAction):
         ...state,
         isVisible: action.isVisible,
       };
-    case 'TOGGLE_VISIBILITY':
+    case 'TOGGLE_DARKMODE':
       return {
         ...state,
-        isVisible: !state.isVisible,
+        isDarkmode: !state.isDarkmode,
       };
     case 'SET_CLOSE_CALLBACK':
       return {

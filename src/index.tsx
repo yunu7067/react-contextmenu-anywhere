@@ -6,7 +6,7 @@ import ContextMenuProvider from './lib/Provider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextMenuProvider>
+    <ContextMenuProvider darkmode>
       <App />
     </ContextMenuProvider>
   </React.StrictMode>,

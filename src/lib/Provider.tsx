@@ -4,17 +4,20 @@ import { ContextMenuState, ContextMenuDispatch, contextMenuReducer } from './sto
 /* 컨텍스트 생성 */
 const ContextMenuStateContext = createContext<ContextMenuState>({
   isVisible: false,
+  isDarkmode: false,
   removeCurrentContextMenu: () => {},
 });
 const ContextMenuDispatchContext = createContext<ContextMenuDispatch>(() => null);
 
 type ContextMenuProviderProps = {
   children: React.ReactNode;
+  darkmode?: boolean;
 };
 
-function ContextMenuProvider({ children }: ContextMenuProviderProps) {
+function ContextMenuProvider({ children, darkmode }: ContextMenuProviderProps) {
   const [state, dispatch] = useReducer(contextMenuReducer, {
     isVisible: false,
+    isDarkmode: darkmode || false,
     removeCurrentContextMenu: () => {},
   });
 
@@ -44,5 +47,16 @@ function useContextMenu(): [ContextMenuState, ContextMenuDispatch] {
   return [state, dispatch];
 }
 
+function useDarkmode(): [boolean, () => void] {
+  const state = useContextMenuState();
+  const dispatch = useContextMenuDispatch();
+  const darkmode = state.isDarkmode;
+  const toggleDarkmode = () => {
+    dispatch({ type: 'TOGGLE_DARKMODE' });
+  };
+
+  return [darkmode, toggleDarkmode];
+}
+
 export default ContextMenuProvider;
-export { useContextMenu, useContextMenuState, useContextMenuDispatch };
+export { useContextMenu, useContextMenuState, useContextMenuDispatch, useDarkmode };

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import { ContextMenu } from './lib/ContextMenu';
+import { useDarkmode } from './lib/Provider';
 import { MenuContainerType } from './lib/Types';
 
 function App() {
+  const [isDarkmode, toggleDarkmode] = useDarkmode();
   const menus: MenuContainerType = [
     [
       {
@@ -127,6 +129,9 @@ function App() {
           <div>우클릭2</div>
         </div>
       </ContextMenu>
+      <button type="button" onClick={toggleDarkmode}>
+        toggle darkmode
+      </button>
     </div>
   );
 }

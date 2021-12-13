@@ -145,6 +145,51 @@ function App() {
 export default App;
 ```
 
+## Useage
+
+### Basic
+
+준비중
+
+### Darkmode
+
+`useDarkmode` 함수를 사용하고자 하는 부분의 최상위에 선언한다.
+
+```jsx
+function App() {
+  const [isDarkmode, toggleDarkmode] = useDarkmode();
+
+  return (
+    <div className="App">
+      <ContextMenu menu={menus}>Right click here!</ContextMenu>
+
+      <button type="button" onClick={toggleDarkmode}>
+        toggle darkmode
+      </button>
+    </div>
+  );
+}
+```
+
+만약 초기값을 지정해주고 싶다면 `ContextMenuProvider`의 속성 `darkmode`를 명시한다.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import ContextMenuProvider from './lib/Provider';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <ContextMenuProvider darkmode>
+      <App />
+    </ContextMenuProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
 ## Examples
 
 준비중

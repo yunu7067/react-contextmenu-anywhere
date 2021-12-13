@@ -8,6 +8,8 @@ div.context-menu {
   --color-text-disabled: #acb0ba;
   --color-border: #ddd;
 
+  transition: background ease 0.25s, color ease 0.25s;
+
   position: absolute;
   display: flex;
   background-color: var(--color-bg);
@@ -19,6 +21,25 @@ div.context-menu {
   font-size: 16px;
   text-align: start;
   z-index: 100;
+}
+div.context-menu[data-darkmode='true'] {
+  --color-bg: #161b22;
+  --color-bg-hover: #30363d;
+  --color-bg-disabled: #010409;
+  --color-text: #c9d1d9;
+  --color-text-hover: #f0f6fc;
+  --color-text-disabled: #484f58;
+  --color-border: #c9d1d9;
+}
+
+div.context-menu[data-darkmode='true'] div.context-menu {
+  --color-bg: #161b22;
+  --color-bg-hover: #30363d;
+  --color-bg-disabled: #010409;
+  --color-text: #c9d1d9;
+  --color-text-hover: #f0f6fc;
+  --color-text-disabled: #484f58;
+  --color-border: #c9d1d9;
 }
 div.context-menu[data-visibility='true'] {
   visibility: visible;
