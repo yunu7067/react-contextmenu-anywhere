@@ -2,7 +2,7 @@
 
 react-contextmenu-anywhere의 기본 예제입니다.
 
-## Basic Useage
+## Basic Usage
 
 0. `react-contextmenu-anywhere` 패키지를 추가합니다.
 

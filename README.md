@@ -145,7 +145,7 @@ function App() {
 export default App;
 ```
 
-## Useage
+## Usage
 
 ### Basic
 
@@ -194,4 +194,4 @@ ReactDOM.render(
 
 준비중
 
-- [Basic useage](./example/basic)
+- [Basic usage](./example/basic)
